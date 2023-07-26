@@ -25,3 +25,6 @@ For production server usage, run:
 ```bash
 poetry run uvicorn freetext.server:app --port 9900
 ```
+
+<p align='center'><small>Made with 💚 at <a href='https://kordinglab.com/'><img alt='KordingLab.com' align='center' src='https://github.com/KordingLab/chatify-server/assets/693511/39f519fe-b05d-43fb-a5d4-f6792de1dbb6' height='32px'></a></small></p>
+
