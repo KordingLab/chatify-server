@@ -13,3 +13,7 @@ class Prompt(BaseModel):
     category: str
     system_prompt: str
 
+
+
+class ExplanationRequest(BaseModel):
+    user_text: str

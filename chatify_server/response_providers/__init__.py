@@ -63,7 +63,7 @@ class OpenAIResponseProvider:
             {{ prompt_text }}
             ----
 
-            Be particularly mindful of scientific rigor issues including confusing correlation with causation, biases, and logical fallacies. You must also correct code errors using your extensive domain knowledge, even if the errors are subtle or minor.
+            Be particularly mindful of scientific rigor issues including confusing correlation with causation, biases, and logical fallacies. You must also correct code errors using your extensive domain knowledge, even if the errors are subtle or minor. If there are no errors or fallacies, you do not need to mention it.
 
             What do you think of this content?
             {{~/user}}

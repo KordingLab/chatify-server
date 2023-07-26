@@ -16,7 +16,7 @@ from .prompt_stores.JSONFilePromptStore import JSONFilePromptStore
 from .response_providers import OpenAIResponseProvider
 
 from .AppManager import AppManager
-from .models import Prompt, PromptID
+from .models import ExplanationRequest, Prompt, PromptID
 from .config import ApplicationSettings
 
 app = FastAPI()
@@ -79,7 +79,7 @@ async def get_all_prompts(
 @prompt_router.post("/{prompt_id}/response")
 async def get_response(
     prompt_id: PromptID,
-    user_text: str,
+    user_content: ExplanationRequest,
     commons: Annotated[Commons, Depends(get_commons)],
 ) -> str:
     try:
@@ -89,7 +89,7 @@ async def get_response(
         raise HTTPException(status_code=404, detail="Could not retrieve prompt.")
 
     try:
-        response = await commons.app_manager.get_response(prompt_id, user_text)
+        response = await commons.app_manager.get_response(prompt_id, user_content.user_text)
         return response
     except Exception as e:
         print(e)
