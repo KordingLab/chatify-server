@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "chatify-server"
+version = "0.1.0"
+description = ""
+authors = ["Jordan Matelsky <matelsky@seas.upenn.edu>"]
+license = "Apache 2.0"
+readme = "README.md"
+packages = [{ include = "chatify_server" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.0"
+pydantic = "^2.1.1"
+guidance = "^0.0.64"
+pydantic-settings = "^2.0.2"
+uvicorn = "^0.23.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+server = "chatify_server.server:serve"
+server-debug = "chatify_server.server:serve_debug"
