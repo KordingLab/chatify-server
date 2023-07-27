@@ -1,0 +1,8 @@
+langchain
+openai
+markdown
+requests
+PyGitHub
+numpy
+poetry
+chardet
