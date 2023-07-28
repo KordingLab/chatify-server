@@ -12,20 +12,12 @@ Before you can use the server, you must either (1) change the assignment and res
 
 ## Usage
 
-For development server usage (with live reloads), run:
-
-```bash
-poetry run server-debug
-# or:
-# poetry run uvicorn freetext.server:app --reload --port 9900
-```
-
 For production server usage, run:
 
 ```bash
-poetry run uvicorn freetext.server:app --port 9900
+poetry run uvicorn chatify_server.server:app --port 9910
 ```
 
 
-<hr /><p align='center'><small>Made with 💚 at <a href='https://kordinglab.com/'> the Kording Lab <img alt='KordingLab.com' align='center' src='https://github.com/KordingLab/chatify-server/assets/693511/39f519fe-b05d-43fb-a5d4-f6792de1dbb6' height='32px'></a></small></p>
+<hr /><p align='center'><small>Made with 💚 at <a href='https://kordinglab.com/'> the Kording Lab <img alt='KordingLab.com' align='center' src='https://github.com/KordingLab/chatify-server/assets/693511/b073b7a7-745e-41d1-b5f6-7efe56109712' height='32px'></a></small></p>
 
