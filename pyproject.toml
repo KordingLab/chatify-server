@@ -8,12 +8,12 @@ readme = "README.md"
 packages = [{ include = "chatify_server" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 fastapi = "^0.100.0"
-pydantic = "^2.1.1"
 guidance = "^0.0.64"
-pydantic-settings = "^2.0.2"
 uvicorn = "^0.23.1"
+pydantic = "1.10.12"
+langchain = "^0.0.246"
 
 
 [build-system]

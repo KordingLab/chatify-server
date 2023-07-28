@@ -1,0 +1,10 @@
+langchain
+openai
+markdown
+requests
+PyGitHub
+pyparsing<3.1.0
+numpy
+poetry
+chardet
+pydantic
