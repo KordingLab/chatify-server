@@ -44,9 +44,9 @@ class OpenAIResponseProvider:
             openai_kwargs = self.config.dict()
             llm = ChatOpenAI(model_name='gpt-3.5-turbo-16k',
                              openai_api_key=openai_kwargs['token'],
-                             openai_org=openai_kwargs['organization'])
+                             openai_organization=openai_kwargs['organization'])
 
-            system_prompt = prompt['system_prompt']
+            system_prompt = prompt.system_prompt
 
             addendum = """
             Be particularly mindful of scientific rigor issues including confusing correlation with causation, biases, and logical fallacies. You must also correct code errors using your extensive domain knowledge, even if the errors are subtle or minor. If there are no errors or fallacies, you do not need to mention it.
@@ -55,7 +55,7 @@ class OpenAIResponseProvider:
             You should treat comments in the code as potential responses to your previous requests, even if those requests are no longer visible in the chat history.
             """
 
-            prompt_text = prompt['prompt_text']
+            prompt_text = prompt.prompt_text
 
             px = PromptTemplate(template=f'SYSTEM: {system_prompt}\n{addendum}\n{prompt_text}',
                                 input_variables=['text'])
