@@ -1,6 +1,7 @@
 from typing import Optional, Protocol
 from langchain.chat_models import ChatOpenAI
-from langchain import PromptTemplate, LLMChain
+from langchain import LLMChain
+from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate, ChatPromptTemplate
 
 from ..models import Prompt
 from ..config import OpenAIConfig
@@ -54,11 +55,11 @@ class OpenAIResponseProvider:
             If the user seems to be providing a plain text request rather than Python code, you should ask them to provide Python code instead and re-send their request.
             Above all, try to be as helpful as possible by following the instructions above and using your extensive domain knowledge. If you do not know something, do not make something up. Instead, simply say that you do not know or that you are unsure.
             """
+            
+            system_prompt = SystemMessagePromptTemplate.from_template(prompt.system_prompt + '\n' + addendum)
+            user_prompt = HumanMessagePromptTemplate.from_template(prompt.prompt_text, input_variables=['text'])
 
-            prompt_text = prompt.prompt_text
-
-            px = PromptTemplate(template=f'SYSTEM: {system_prompt}\n{addendum}\n{prompt_text}',
-                                input_variables=['text'])
+            px = ChatPromptTemplate.from_messages([system_prompt, user_prompt])
 
             chain = LLMChain(prompt=px, llm=llm)
             return chain.run(content).strip()
