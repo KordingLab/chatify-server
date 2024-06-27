@@ -42,7 +42,7 @@ class OpenAIResponseProvider:
 
         # set the default language model used to execute guidance programs
         try:            
-            llm = ChatOpenAI(model_name='gpt-3.5-turbo-16k',
+            llm = ChatOpenAI(model_name='gpt-4o',
                              openai_api_key=self.config.token)
 
             system_prompt = prompt.system_prompt
