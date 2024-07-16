@@ -1,4 +1,6 @@
-langchain<=0.0.226
+langchain>=0.2.6
+langchain-community
+langchain-openai
 openai
 markdown
 requests
@@ -7,4 +9,4 @@ pyparsing<3.1.0
 numpy
 poetry
 chardet
-pydantic==1.10.11
+pydantic
